@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="أداة متكاملة لتحليل سوق الخيارات الثنائية في Pocket Option مع إشارات تداول لحظية">
+    <title>محلل الخيارات الثنائية | Pocket Option</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>محلل الخيارات الثنائية</h1>
+            <p>أداة متكاملة لتحليل سوق الخيارات الثنائية في Pocket Option</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="sidebar">
+                <div class="market-status">
+                    <h2>حالة الأسواق</h2>
+                    <div id="market-status-container">
+                        <div class="market-item open">
+                            <span class="market-name">فوركس</span>
+                            <span class="status">مفتوح</span>
+                        </div>
+                        <div class="market-item closed">
+                            <span class="market-name">الأسهم الأمريكية</span>
+                            <span class="status">مغلق</span>
+                        </div>
+                        <div class="market-item open">
+                            <span class="market-name">العملات الرقمية</span>
+                            <span class="status">مفتوح</span>
+                        </div>
+                        <div class="market-item open">
+                            <span class="market-name">المعادن</span>
+                            <span class="status">مفتوح</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="economic-news">
+                    <h2>الأخبار الاقتصادية</h2>
+                    <div id="news-container">
+                        <div class="news-item high-impact">
+                            <div class="news-time">14:30</div>
+                            <div class="news-content">
+                                <div class="news-title">معدل البطالة الأمريكي</div>
+                                <div class="news-impact">تأثير قوي</div>
+                            </div>
+                        </div>
+                        <div class="news-item medium-impact">
+                            <div class="news-time">16:00</div>
+                            <div class="news-content">
+                                <div class="news-title">مؤشر ISM للتصنيع</div>
+                                <div class="news-impact">تأثير متوسط</div>
+                            </div>
+                        </div>
+                        <div class="news-item low-impact">
+                            <div class="news-time">18:15</div>
+                            <div class="news-content">
+                                <div class="news-title">تصريحات البنك المركزي الأوروبي</div>
+                                <div class="news-impact">تأثير منخفض</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sessions">
+                    <h2>جلسات التداول</h2>
+                    <div id="sessions-container">
+                        <div class="session-item active">
+                            <span class="session-name">آسيا</span>
+                            <span class="session-time">00:00 - 09:00</span>
+                        </div>
+                        <div class="session-item active">
+                            <span class="session-name">أوروبا</span>
+                            <span class="session-time">08:00 - 17:00</span>
+                        </div>
+                        <div class="session-item">
+                            <span class="session-name">أمريكا</span>
+                            <span class="session-time">13:00 - 22:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <div class="symbol-selector">
+                            <select id="symbol-select">
+                                <option value="EURUSD">EUR/USD</option>
+                                <option value="GBPUSD">GBP/USD</option>
+                                <option value="USDJPY">USD/JPY</option>
+                                <option value="BTCUSD">BTC/USD</option>
+                                <option value="ETHUSD">ETH/USD</option>
+                                <option value="XAUUSD">XAU/USD (Gold)</option>
+                            </select>
+                        </div>
+                        <div class="timeframe-selector">
+                            <button class="timeframe-btn active" data-timeframe="1">1M</button>
+                            <button class="timeframe-btn" data-timeframe="5">5M</button>
+                            <button class="timeframe-btn" data-timeframe="15">15M</button>
+                            <button class="timeframe-btn" data-timeframe="30">30M</button>
+                            <button class="timeframe-btn" data-timeframe="60">1H</button>
+                        </div>
+                    </div>
+                    <div id="chart"></div>
+                </div>
+
+                <div class="signals-container">
+                    <h2>إشارات التداول</h2>
+                    <div class="signals-settings">
+                        <div class="signal-type">
+                            <label>نوع الإشارة:</label>
+                            <select id="signal-type-select">
+                                <option value="candle-close">عند إغلاق الشمعة</option>
+                                <option value="instant">إشارات لحظية</option>
+                            </select>
+                        </div>
+                        <div class="signal-strategy">
+                            <label>الاستراتيجية:</label>
+                            <select id="strategy-select">
+                                <option value="combined">الاستراتيجية المدمجة</option>
+                                <option value="trend">اتجاه السوق</option>
+                                <option value="support-resistance">الدعم والمقاومة</option>
+                                <option value="indicators">المؤشرات الفنية</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="current-signal">
+                    <div class="signal-badge buy">
+                        <i class="fas fa-arrow-up"></i> شراء
+                    </div>
+                    <div class="signal-details">
+                        <div class="signal-asset">EUR/USD</div>
+                        <div class="signal-time">12:45</div>
+                        <div class="signal-expiry">مدة الصفقة: 5 دقائق</div>
+                        <div class="signal-profit">
+                            <i class="fas fa-percentage"></i> نسبة الربح: <span class="profit-percentage">85%</span>
+                        </div>
+                    </div>
+                    <div class="signal-strength">
+                        <div class="strength-label">قوة الإشارة:</div>
+                        <div class="strength-meter">
+                            <div class="strength-bar" style="width: 85%;"></div>
+                        </div>
+                        <div class="strength-value">85%</div>
+                    </div>
+                </div>
+                    <div class="signals-history">
+                        <h3>سجل الإشارات</h3>
+                        <div class="history-item win">
+                            <div class="history-signal buy">شراء</div>
+                            <div class="history-asset">EUR/USD</div>
+                            <div class="history-time">12:30</div>
+                            <div class="history-result">ربح</div>
+                        </div>
+                        <div class="history-item loss">
+                            <div class="history-signal sell">بيع</div>
+                            <div class="history-asset">GBP/USD</div>
+                            <div class="history-time">12:15</div>
+                            <div class="history-result">خسارة</div>
+                        </div>
+                        <div class="history-item win">
+                            <div class="history-signal buy">شراء</div>
+                            <div class="history-asset">BTC/USD</div>
+                            <div class="history-time">12:00</div>
+                            <div class="history-result">ربح</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pocket-option-integration">
+            <h2>الاتصال بـ Pocket Option</h2>
+            <div class="integration-status connected">
+                <i class="fas fa-plug"></i>
+                <span>متصل بالسوق المباشر</span>
+                <div id="api-type">Pocket Option API</div>
+            </div>
+            <div class="integration-buttons">
+                <button id="toggle-connection" class="connection-btn">
+                    <i class="fas fa-power-off"></i>
+                    قطع الاتصال
+                </button>
+                <button id="api-toggle" class="connection-btn">
+                    <i class="fas fa-exchange-alt"></i>
+                    تبديل API
+                </button>
+                <a href="https://pocketoption.com/ar/" target="_blank" class="pocket-option-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                    فتح Pocket Option
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lightweight-charts@3.8.0/dist/lightweight-charts.standalone.production.js"></script>
+    <script src="pocket-option-api.js"></script>
+    <script src="forex-api.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

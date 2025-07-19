@@ -1,0 +1,21 @@
+{
+  "name": "binary-options-analyzer",
+  "version": "1.0.0",
+  "description": "موقع لتحليل سوق الخيارات الثنائية مع التركيز على منصة Pocket Option",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8000"
+  },
+  "keywords": [
+    "binary-options",
+    "trading",
+    "pocket-option",
+    "analysis",
+    "signals"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}

@@ -1,0 +1,499 @@
+/* الإعدادات العامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #0d1117;
+    color: #e6edf3;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid #30363d;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #58a6ff;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #8b949e;
+}
+
+/* تنسيق لوحة التحكم */
+.dashboard {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* الشريط الجانبي */
+.sidebar {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar > div {
+    background-color: #161b22;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #58a6ff;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 10px;
+}
+
+/* حالة الأسواق */
+.market-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #30363d;
+}
+
+.market-item:last-child {
+    border-bottom: none;
+}
+
+.market-name {
+    font-weight: 600;
+}
+
+.status {
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.open .status {
+    background-color: #238636;
+    color: #fff;
+}
+
+.closed .status {
+    background-color: #da3633;
+    color: #fff;
+}
+
+/* الأخبار الاقتصادية */
+.news-item {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #30363d;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-time {
+    font-weight: 600;
+    min-width: 50px;
+}
+
+.news-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.news-impact {
+    font-size: 0.85rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.high-impact .news-impact {
+    background-color: #da3633;
+    color: #fff;
+}
+
+.medium-impact .news-impact {
+    background-color: #f0883e;
+    color: #fff;
+}
+
+.low-impact .news-impact {
+    background-color: #238636;
+    color: #fff;
+}
+
+/* جلسات التداول */
+.session-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #30363d;
+    opacity: 0.6;
+}
+
+.session-item.active {
+    opacity: 1;
+}
+
+.session-item:last-child {
+    border-bottom: none;
+}
+
+.session-name {
+    font-weight: 600;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* منطقة الرسم البياني */
+.chart-container {
+    background-color: #161b22;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.symbol-selector select,
+.signal-type select,
+.signal-strategy select {
+    background-color: #0d1117;
+    color: #e6edf3;
+    border: 1px solid #30363d;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.9rem;
+}
+
+.timeframe-selector {
+    display: flex;
+    gap: 5px;
+}
+
+.timeframe-btn {
+    background-color: #0d1117;
+    color: #8b949e;
+    border: 1px solid #30363d;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.timeframe-btn.active {
+    background-color: #1f6feb;
+    color: #fff;
+    border-color: #1f6feb;
+}
+
+#chart {
+    height: 400px;
+    width: 100%;
+}
+
+/* إشارات التداول */
+.signals-container {
+    background-color: #161b22;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.signals-container h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #58a6ff;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 10px;
+}
+
+.signals-settings {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.signal-type, .signal-strategy {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.current-signal {
+    background-color: #0d1117;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.signal-badge {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.signal-badge.buy {
+    background-color: #238636;
+    color: #fff;
+}
+
+.signal-badge.sell {
+    background-color: #da3633;
+    color: #fff;
+}
+
+.signal-details {
+    display: flex;
+    gap: 20px;
+}
+
+.signal-asset {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.signal-profit {
+    font-size: 0.9rem;
+    color: #238636;
+    font-weight: 600;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.profit-percentage {
+    background-color: rgba(35, 134, 54, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.signal-strength {
+    margin-top: 10px;
+}
+
+.strength-label {
+    margin-bottom: 5px;
+}
+
+.strength-meter {
+    height: 10px;
+    background-color: #30363d;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.strength-bar {
+    height: 100%;
+    background-color: #238636;
+    border-radius: 5px;
+}
+
+.signals-history h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #8b949e;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #30363d;
+    align-items: center;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-signal {
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.history-signal.buy {
+    background-color: #238636;
+    color: #fff;
+}
+
+.history-signal.sell {
+    background-color: #da3633;
+    color: #fff;
+}
+
+.history-result {
+    font-weight: 600;
+}
+
+.win .history-result {
+    color: #238636;
+}
+
+.loss .history-result {
+    color: #da3633;
+}
+
+/* تكامل Pocket Option */
+.pocket-option-integration {
+    background-color: #161b22;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pocket-option-integration h2 {
+    font-size: 1.3rem;
+    color: #58a6ff;
+}
+
+.integration-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.integration-status.connected {
+    color: #238636;
+}
+
+.integration-status.disconnected {
+    color: #da3633;
+}
+
+#api-type {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #58a6ff;
+    font-weight: 600;
+}
+
+.integration-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.connection-btn {
+    background-color: #da3633;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.connection-btn:hover {
+    background-color: #f85149;
+}
+
+.connection-btn.connect {
+    background-color: #238636;
+}
+
+.connection-btn.connect:hover {
+    background-color: #2ea043;
+}
+
+.pocket-option-btn {
+    background-color: #1f6feb;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.pocket-option-btn:hover {
+    background-color: #388bfd;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 1024px) {
+    .dashboard {
+        flex-direction: column;
+    }
+    
+    .sidebar, .main-content {
+        width: 100%;
+    }
+    
+    .pocket-option-integration {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .signals-settings {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .signal-details {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .history-item {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+}

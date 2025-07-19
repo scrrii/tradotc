@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- خلفية دائرية -->
+  <circle cx="32" cy="32" r="30" fill="#1f6feb" />
+  
+  <!-- رمز الشمعة الصاعدة -->
+  <rect x="20" y="18" width="6" height="28" fill="#26a69a" />
+  <rect x="20" y="14" width="6" height="4" fill="#26a69a" />
+  <rect x="20" y="46" width="6" height="4" fill="#26a69a" />
+  
+  <!-- رمز الشمعة الهابطة -->
+  <rect x="38" y="18" width="6" height="28" fill="#ef5350" />
+  <rect x="38" y="14" width="6" height="4" fill="#ef5350" />
+  <rect x="38" y="46" width="6" height="4" fill="#ef5350" />
+  
+  <!-- خط المؤشر -->
+  <path d="M12,32 L52,32" stroke="#ffffff" stroke-width="2" stroke-dasharray="2,2" />
+  
+  <!-- سهم صاعد -->
+  <polygon points="26,24 30,18 34,24" fill="#ffffff" />
+  
+  <!-- سهم هابط -->
+  <polygon points="30,40 34,46 38,40" fill="#ffffff" />
+  
+  <!-- حلقة خارجية -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#ffffff" stroke-width="2" />
+</svg>
