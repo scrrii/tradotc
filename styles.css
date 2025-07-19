@@ -69,6 +69,7 @@ header p {
 /* حالة الأسواق */
 .market-item {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 10px;
     border-bottom: 1px solid #30363d;
@@ -96,6 +97,15 @@ header p {
 .closed .status {
     background-color: #da3633;
     color: #fff;
+}
+
+.market-description {
+    width: 100%;
+    font-size: 0.8rem;
+    color: #8b949e;
+    margin-top: 5px;
+    padding-right: 5px;
+    font-style: italic;
 }
 
 /* الأخبار الاقتصادية */

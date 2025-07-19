@@ -33,6 +33,15 @@ class ForexAPI {
             { symbol: 'AUDJPY', name: 'AUD/JPY', type: 'forex', profitPercent: 77, spread: 2.1 },
             { symbol: 'CADJPY', name: 'CAD/JPY', type: 'forex', profitPercent: 76, spread: 2.2 },
             
+            // أزواج OTC (Over The Counter)
+            { symbol: 'EURUSD-OTC', name: 'EUR/USD OTC', type: 'otc', profitPercent: 87, spread: 1.0 },
+            { symbol: 'GBPUSD-OTC', name: 'GBP/USD OTC', type: 'otc', profitPercent: 86, spread: 1.2 },
+            { symbol: 'USDJPY-OTC', name: 'USD/JPY OTC', type: 'otc', profitPercent: 85, spread: 1.1 },
+            { symbol: 'EURGBP-OTC', name: 'EUR/GBP OTC', type: 'otc', profitPercent: 84, spread: 1.5 },
+            { symbol: 'USDCHF-OTC', name: 'USD/CHF OTC', type: 'otc', profitPercent: 83, spread: 1.6 },
+            { symbol: 'AUDUSD-OTC', name: 'AUD/USD OTC', type: 'otc', profitPercent: 85, spread: 1.3 },
+            { symbol: 'EURJPY-OTC', name: 'EUR/JPY OTC', type: 'otc', profitPercent: 86, spread: 1.4 },
+            
             // المؤشرات
             { symbol: 'US30', name: 'Dow Jones 30', type: 'index', profitPercent: 85, spread: 3.0 },
             { symbol: 'SPX500', name: 'S&P 500', type: 'index', profitPercent: 86, spread: 2.8 },
@@ -573,6 +582,11 @@ class ForexAPI {
                 name: 'فوركس',
                 status: (currentDay >= 1 && currentDay <= 5) ? 'open' : 'closed'
             },
+            otc: {
+                name: 'سوق OTC',
+                status: 'open',
+                description: 'متاح 24/7 حتى في عطلات نهاية الأسبوع'
+            },
             us_stocks: {
                 name: 'الأسهم الأمريكية',
                 status: (currentDay >= 1 && currentDay <= 5 && currentHour >= 14 && currentHour < 21) ? 'open' : 'closed'
@@ -587,7 +601,8 @@ class ForexAPI {
             },
             crypto: {
                 name: 'العملات الرقمية',
-                status: 'open' // العملات الرقمية متاحة على مدار الساعة
+                status: 'open',
+                description: 'متاح 24/7'
             },
             commodities: {
                 name: 'السلع',
